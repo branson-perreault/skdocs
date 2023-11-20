@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:branson-perreault/skdocs.git",
   "author": "Branson Perreault <bkp723@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
