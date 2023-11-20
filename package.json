@@ -1,0 +1,8 @@
+{
+  "name": "skdocs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:branson-perreault/skdocs.git",
+  "author": "Branson Perreault <bkp723@gmail.com>",
+  "license": "MIT"
+}
