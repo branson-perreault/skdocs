@@ -6,14 +6,16 @@
   "author": "Branson Perreault <bkp723@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "classnames": "^2.3.2",
     "eslint": "^8.54.0",
     "express": "^4.18.2",
     "prettier": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
     "typescript": "^5.3.2"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.tsx"
   }
 }
