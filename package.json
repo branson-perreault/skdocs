@@ -9,7 +9,7 @@
   "scripts": {
     "build-ts": "tsc",
     "build": "yarn build-ts",
-    "start": "yarn watch",
+    "start": "node dist/index.js",
     "test": "jest",
     "watch-node": "nodemon dist/index.js",
     "watch-ts": "tsc -w",
