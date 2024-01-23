@@ -1,12 +1,16 @@
 import express from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
-import * as dotenv from 'dotenv';
+
+// Must init firestore before importing controllers
+require('./firestore/init');
 
 import { apiController } from './api/routes';
+import { apiErrorHandler } from './api/errorHandler';
+import dotenv from 'dotenv';
+import path from 'path';
 
-dotenv.config();
-
+dotenv.config({ path: path.join(__dirname, `.env`)});
 if (!process.env.PORT) {
     process.exit(1);
 }
@@ -20,7 +24,7 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(apiController);
+app.use('/api', apiController);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)

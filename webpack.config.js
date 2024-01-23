@@ -1,9 +1,13 @@
-import path from 'path';
+const path = require('path');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+
+
 const config = {
-    entry: './src/server/index.ts',
+    entry: './server/index.ts',
     output: {
         path: path.resolve('./dist'),
     },
@@ -14,6 +18,9 @@ const config = {
     plugins: [
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+        new webpack.DefinePlugin({
+            "process.env": JSON.stringify(process.env)
+        })
     ],
     module: {
         rules: [
