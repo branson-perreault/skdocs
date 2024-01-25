@@ -1,0 +1,60 @@
+{
+  "name": "skdocs-server",
+  "description": "Doctors Accepting Patients in Saskatchewan",
+  "author": "Branson Perreault <bkp723@gmail.com>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:branson-perreault/skdocs.git",
+  "license": "MIT",
+  "scripts": {
+    "build-ts": "tsc",
+    "build": "yarn build-ts",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "watch-node": "cp env/.env.development ./dist/.env && NODE_ENV=development nodemon dist/index.js",
+    "watch-ts": "tsc -w",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"Typescript,Node\" -c \"yellow.bold,green.bold\" \"yarn watch-ts\" \"yarn watch-node\""
+  },
+  "dependencies": {
+    "async": "^3.2.5",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "dotenv": "^16.3.1",
+    "errorhandler": "^1.5.1",
+    "express": "^4.18.2",
+    "firebase": "^10.7.2",
+    "firebase-admin": "^12.0.0",
+    "http-graceful-shutdown": "^3.1.13",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/async": "^3.2.24",
+    "@types/body-parser": "^1.19.5",
+    "@types/compression": "^1.7.5",
+    "@types/concurrently": "^7.0.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/errorhandler": "^1.5.3",
+    "@types/express": "^4.17.21",
+    "@types/firebase": "^3.2.1",
+    "@types/http-graceful-shutdown": "^2.3.0",
+    "@types/jest": "^29.5.10",
+    "@types/node": "^20.11.5",
+    "@types/nodemon": "^1.19.6",
+    "@types/prettier": "^3.0.0",
+    "@types/webpack": "^5.28.5",
+    "concurrently": "^8.2.2",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.1.0",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.89.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "resolutions": {
+    "wrap-ansi": "7.0.0"
+  }
+}

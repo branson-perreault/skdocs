@@ -1,25 +1,50 @@
 {
-  "name": "my-webpack-project",
+  "name": "skdocs-client",
+  "description": "Doctors accepting patients in Saskatchewan",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "start": "yarn watch",
+    "build": "yarn build:prod",
+    "test": "jest",
+    "serve": "webpack serve",
+    "build:dev": "webpack --mode=development --watch",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"Webpack Build,Webpack Serve\" -c \"yellow.bold,green.bold\" \"yarn build:dev\" \"yarn serve\""
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "cross-env": "^7.0.3",
+    "classnames": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "cross-env PORT=3021 react-scripts start",
-    "build": "webpack --mode=production --node-env=production",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:dev": "webpack --mode=development",
-    "build:prod": "webpack --mode=production --node-env=production",
-    "watch": "webpack --watch"
+  "devDependencies": {
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/classnames": "^2.3.1",
+    "@types/concurrently": "^7.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-icons": "^3.0.0",
+    "@webpack-cli/generators": "^3.0.7",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.56.0",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
@@ -39,19 +64,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@webpack-cli/generators": "^3.0.7",
-    "css-loader": "^6.8.1",
-    "html-webpack-plugin": "^5.5.3",
-    "mini-css-extract-plugin": "^2.7.6",
-    "sass": "^1.69.5",
-    "sass-loader": "^13.3.2",
-    "style-loader": "^3.3.3",
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.3.2",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
-  },
-  "description": "Doctors accepting patients in Saskatchewan"
+  }
 }
