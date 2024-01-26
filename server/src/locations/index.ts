@@ -1,5 +1,5 @@
 import repository from './repository';
-import { Location } from 'index';
+import { Location } from '../types';
 import { NotFound } from '../errors/notfound';
 
 const getLocation = (uuid: string): Promise<Location> => {

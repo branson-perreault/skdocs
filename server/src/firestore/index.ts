@@ -1,8 +1,9 @@
 import { dataPoint } from './converter';
-import type { Location } from 'location';
+import { Doctor, Location } from '../types';
 
 const db = {
-    locations: dataPoint<Location>('locations')
+    locations: dataPoint<Location>('locations'),
+    doctors: dataPoint<Doctor>('doctors')
 }
 
 export default db;

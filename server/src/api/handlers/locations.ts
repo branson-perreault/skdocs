@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import locations from '../locations';
+import locations from '../../locations';
 
 export const getLocation  = async (
     request: Request,
