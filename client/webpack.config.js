@@ -7,7 +7,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const config = {
     entry: './src/index.tsx',
     output: {
-        filename: "bundle.js",
+        filename: 'bundle.js',
         path: path.resolve(__dirname, './dist'),
     },
     plugins: [
@@ -51,14 +51,17 @@ const config = {
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.jsx', '.js', '.css']
+        extensions: ['.tsx', '.ts', '.jsx', '.js', '.css'],
+        alias: {
+            Types: '../types'
+        }
     },
 };
 
 const devServer = {
     static: './dist',
     port: 3021
-}
+};
 
 module.exports = () => {
     if (isProduction) {
@@ -69,7 +72,7 @@ module.exports = () => {
         }));
     } else {
         config.mode = 'development';
-        config.devServer = devServer
+        config.devServer = devServer;
     }
     return config;
 };
