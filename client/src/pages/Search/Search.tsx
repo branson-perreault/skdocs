@@ -1,7 +1,7 @@
-import {ReactElement} from "react";
+import { ReactElement } from 'react';
 
 const Search = (): ReactElement => {
-    return <></>
-}
+    return <span>Search</span>;
+};
 
 export default Search;

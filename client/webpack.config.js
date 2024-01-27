@@ -9,6 +9,7 @@ const config = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, './dist'),
+        publicPath: '/'
     },
     plugins: [
         new HtmlWebpackPlugin({}),
@@ -60,7 +61,8 @@ const config = {
 
 const devServer = {
     static: './dist',
-    port: 3021
+    port: 3021,
+    historyApiFallback: true
 };
 
 module.exports = () => {

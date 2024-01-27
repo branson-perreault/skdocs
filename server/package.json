@@ -48,8 +48,8 @@
     "nodemon": "^3.0.1",
     "prettier": "^3.1.0",
     "ts-loader": "^9.5.1",
-    "webpack": "^5.89.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0"
   },
   "engines": {
     "node": ">=14.0.0"

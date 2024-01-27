@@ -5,10 +5,11 @@ import bodyParser from 'body-parser';
 // Must init firestore before importing controllers
 require('./firestore/init');
 
-import { apiController } from './api/routes';
-import { apiErrorHandler } from './api/errorHandler';
 import dotenv from 'dotenv';
 import path from 'path';
+
+import apiController from './controllers/api';
+import clientController from './controllers/client';
 
 dotenv.config({ path: path.join(__dirname, `.env`)});
 if (!process.env.PORT) {
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/api', apiController);
+app.use('/', clientController);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)

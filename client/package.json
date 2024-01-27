@@ -13,10 +13,12 @@
     "watch": "concurrently -k -p \"[{name}]\" -n \"Webpack Build,Webpack Serve\" -c \"yellow.bold,green.bold\" \"yarn build:dev\" \"yarn serve\""
   },
   "dependencies": {
+    "axios": "^1.6.7",
     "classnames": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -25,11 +27,13 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/axios": "^0.14.0",
     "@types/classnames": "^2.3.1",
     "@types/concurrently": "^7.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-icons": "^3.0.0",
+    "@types/react-router-dom": "^5.3.3",
     "@webpack-cli/generators": "^3.0.7",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
