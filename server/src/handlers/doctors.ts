@@ -8,12 +8,10 @@ export const getDoctor = async (
     response: Response,
     next: NextFunction
 ): Promise<void> => {
-    try {
+    catchErrors(next, async () => {
         const results = await doctors.getDoctor(request.params['uuid']);
         response.json(results);
-    } catch (error) {
-        next(error);
-    }
+    });
 };
 
 export const getDoctors = async (
@@ -21,12 +19,10 @@ export const getDoctors = async (
     response: Response,
     next: NextFunction
 ): Promise<void> => {
-    try {
+    catchErrors(next, async () => {
         const results = await doctors.listDoctors();
         response.json(results);
-    } catch (error) {
-        next(error);
-    }
+    });
 };
 
 export const createDoctor = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
