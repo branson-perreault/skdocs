@@ -6,7 +6,7 @@ export class BaseError extends Error {
     protected code: number;
     protected reason: string;
 
-    constructor(message: string = null, code: number = null) {
+    constructor(message?: string, code?: number) {
         super(message || BaseError.DEFAULT_MESSAGE);
         this.code = code || BaseError.DEFAULT_CODE;
         this.reason = BaseError.DEFAULT_REASON;

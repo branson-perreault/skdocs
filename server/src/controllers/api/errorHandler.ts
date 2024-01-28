@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { BaseError } from '../../errors/error';
 
-
 export const apiErrorHandler = async (
     error: Error,
     request: Request,

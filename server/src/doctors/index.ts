@@ -1,6 +1,7 @@
 import repository from './repository';
 import { CreateDoctorRequest, Doctor } from '../../../types';
 import { NotFound } from '../errors/notfound';
+import { Conflict } from '../errors/conflict';
 
 const getDoctor = (uuid: string): Promise<Doctor> => {
     return repository.getDoctor(uuid).then(doctor => {
@@ -16,7 +17,12 @@ const listDoctors = (): Promise<Doctor[]> => {
 };
 
 const createDoctor = (request: CreateDoctorRequest): Promise<Doctor> => {
-    return repository.createDoctor(request);
+    return repository.createDoctor(request).then(doctor => {
+        if (!doctor) {
+            throw new Conflict();
+        }
+        return doctor as Doctor;
+    });
 };
 
 export default {

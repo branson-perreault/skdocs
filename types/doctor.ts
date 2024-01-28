@@ -2,8 +2,10 @@ export type Doctor = {
     uuid: string;
     first_name: string;
     last_name: string;
-    physician_id: string;
+    physician_id: string | null;
     accepting: boolean;
+    created: Date;
+    updated: Date;
 }
 
 export type CreateDoctorRequest = {
