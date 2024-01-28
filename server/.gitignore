@@ -136,4 +136,4 @@ dist
 .idea/*
 
 # service accounts
-server/src/firestore/serviceAccountKey.json
+src/firestore/serviceAccountKey.json

@@ -2,7 +2,7 @@ import express from 'express';
 import { apiErrorHandler } from './errorHandler';
 import { apiMiddleware } from './middleware';
 
-import { getDoctor, getDoctors } from '../../handlers/doctors';
+import { createDoctor, getDoctor, getDoctors } from '../../handlers/doctors';
 import { getLocation, getLocations } from '../../handlers/locations';
 
 const router = express.Router();
@@ -13,6 +13,7 @@ router.get('/locations', getLocations);
 router.get('/locations/:uuid', getLocation);
 router.get('/doctors', getDoctors);
 router.get('/doctors/:uuid', getDoctor);
+router.post('/doctors', createDoctor);
 
 // Sad path stack
 router.use(apiErrorHandler);

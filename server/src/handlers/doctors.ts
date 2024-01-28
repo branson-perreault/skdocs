@@ -1,7 +1,9 @@
 import { NextFunction, Request, Response } from 'express';
 import doctors from '../doctors';
+import { catchErrors } from '../controllers/api/middleware';
+import { CreateDoctorRequest } from '../../../types';
 
-export const getDoctor  = async (
+export const getDoctor = async (
     request: Request,
     response: Response,
     next: NextFunction
@@ -14,7 +16,7 @@ export const getDoctor  = async (
     }
 };
 
-export const getDoctors  = async (
+export const getDoctors = async (
     request: Request,
     response: Response,
     next: NextFunction
@@ -25,4 +27,17 @@ export const getDoctors  = async (
     } catch (error) {
         next(error);
     }
+};
+
+export const createDoctor = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+    catchErrors(next, async () => {
+        const createDoctorRequest: CreateDoctorRequest = {
+            firstName: request.body.firstName,
+            lastName: request.body.lastName,
+            physicianId: request.body.physicianId || null,
+            accepting: !!request.body.accepting
+        };
+        const results = await doctors.createDoctor(createDoctorRequest);
+        response.json(results);
+    });
 };
