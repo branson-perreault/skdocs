@@ -1,6 +1,3 @@
-@import '../../styles/_colors.scss';
-@import '../../styles/_sizes.scss';
-
 h1.text {
   font-size: 32px;
   line-height: 36px;
@@ -24,11 +21,9 @@ h4.text {
 h5.text {
   font-size: 14px;
   line-height: 16px;
-  color: #676767;
 }
 
 .text {
-  color: #424242;
   font-weight: 400;
   margin: 0;
 }

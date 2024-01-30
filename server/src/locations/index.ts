@@ -15,7 +15,12 @@ const listLocations = (): Promise<Location[]> => {
     return repository.listLocations();
 };
 
+const listLocationsByDoctor = (uuid: string): Promise<Location[]> => {
+    return repository.listLocationsByDoctor(uuid);
+}
+
 export default {
     getLocation,
-    listLocations
+    listLocations,
+    listLocationsByDoctor
 };

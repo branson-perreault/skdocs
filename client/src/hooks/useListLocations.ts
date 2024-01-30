@@ -1,15 +1,15 @@
-import { Doctor } from '../../../types';
+import { Location } from '../../../types';
 import { useCallback, useEffect, useState } from 'react';
 import api from '../api';
 
-type UseGetDoctor = {
-    getDoctor: () => void;
-    doctor: Doctor | null;
+type UseListLocations = {
+    listLocations: () => void;
+    locations: Location[] | null;
     loading: boolean;
 }
 
-export const useGetDoctor = (uuid: string, performFetch = false): UseGetDoctor => {
-    const [doctor, setDoctor] = useState<Doctor | null>(null);
+export const useListLocations = (performFetch = false): UseListLocations => {
+    const [locations, setLocations] = useState<Location[] | null>(null);
     const [loading, setLoading] = useState<boolean>(performFetch);
 
     const callback = useCallback(() => {
@@ -17,10 +17,10 @@ export const useGetDoctor = (uuid: string, performFetch = false): UseGetDoctor =
             return;
         }
         setLoading(true);
-        return api.getDoctor(uuid)
-            .then(doctor => setDoctor(doctor))
+        return api.listLocations()
+            .then(locations => setLocations(locations))
             .finally(() => setLoading(false));
-    }, [setLoading, setDoctor, uuid]);
+    }, [setLoading, setLocations]);
 
     useEffect(() => {
         if (performFetch) {
@@ -29,8 +29,8 @@ export const useGetDoctor = (uuid: string, performFetch = false): UseGetDoctor =
     }, [performFetch, callback]);
 
     return {
-        getDoctor: callback,
-        doctor,
+        listLocations: callback,
+        locations: locations,
         loading
     };
 };

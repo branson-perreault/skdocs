@@ -23,3 +23,14 @@ export const getLocations = async (
         response.json(results);
     });
 };
+
+export const getDoctorLocation = async (
+    request: Request,
+    response: Response,
+    next: NextFunction
+): Promise<void> => {
+    catchErrors(next, async () => {
+        const results = await locations.listLocationsByDoctor(request.params['uuid']);
+        response.json(results);
+    });
+};
