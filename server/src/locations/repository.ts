@@ -19,7 +19,10 @@ const listLocationsByDoctor = async (uuid: string): Promise<Location[]> => {
     const locations = await Promise.all(
         junctions.docs
             .filter(junction => junction.exists)
-            .map(junction => db.locations.doc(junction.data().location_id).get())
+            .map(junction => {
+                const data = junction.data();
+                return db.locations.doc(data.location_id).get()
+            })
     );
 
     return locations.filter(doc => doc.exists).map(doc => doc.data() as Location);

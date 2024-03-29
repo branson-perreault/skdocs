@@ -16,7 +16,9 @@ export const useListDoctorLocations = (uuid: string, performFetch = false): UseL
         setLoading(true);
         return api.listDoctorLocations(uuid)
             .then(locations => setLocations(locations))
-            .finally(() => setLoading(false));
+            .finally(() => {
+                setLoading(false)
+            });
     }, [setLoading, setLocations]);
 
     useEffect(() => {

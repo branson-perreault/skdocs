@@ -13,9 +13,6 @@ export const useGetDoctor = (uuid: string, performFetch = false): UseGetDoctor =
     const [loading, setLoading] = useState<boolean>(performFetch);
 
     const callback = useCallback(() => {
-        if (loading) {
-            return;
-        }
         setLoading(true);
         return api.getDoctor(uuid)
             .then(doctor => setDoctor(doctor))
