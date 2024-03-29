@@ -65,6 +65,13 @@ const devServer = {
     historyApiFallback: true
 };
 
+const prodServer = {
+    static: './dist',
+    port: 8080,
+    historyApiFallback: true,
+    allowedHosts: "all"
+};
+
 module.exports = () => {
     if (isProduction) {
         config.mode = 'production';
@@ -72,6 +79,12 @@ module.exports = () => {
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css'
         }));
+        config.devServer = prodServer;
+        config.performance = {
+            hints: false,
+            maxEntrypointSize: 512000,
+            maxAssetSize: 512000
+        }
     } else {
         config.mode = 'development';
         config.devServer = devServer;
