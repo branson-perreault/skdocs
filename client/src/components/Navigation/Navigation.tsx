@@ -11,10 +11,12 @@ const Navigation = (): ReactElement => {
     }}>
         <div className={'navigation__container'}>
             <div className={'navigation__container--left'}>
+                <Flex direction={'column'} gap={12}>
                 <Text as='h2' color={'white'}>Doctors Accepting Patients in Saskatchewan</Text>
                 <Flex direction={'row'} gap={12}>
-                    <Text as='h4' color={'white'}><Button theme={'button'} href={'/find'}>Search</Button></Text>
-                    <Text as='h4' color={'white'}><Button theme={'button'} href={'/about'}>About</Button></Text>
+                    <Text as='h4' color={'white'}><Button as='link' theme={'link'} to={'/find'}>Search</Button></Text>
+                    <Text as='h4' color={'white'}><Button as='link' theme={'link'} to={'/about'}>About</Button></Text>
+                </Flex>
                 </Flex>
             </div>
             <div className={'navigation__container--right'}>

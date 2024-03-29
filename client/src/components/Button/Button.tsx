@@ -20,15 +20,21 @@ const styles = {
         color: FONT_COLORS.white,
         fontWeight: '600'
     },
-    link: {},
-    linkPrimary: {}
+    link: {
+        color: FONT_COLORS.white,
+        textDecoration: 'none'
+    },
+    linkPrimary: {
+        color: FONT_COLORS.accent
+    }
 };
 
 type Props = {
     children: string | ReactNode;
     onClick?: () => void;
-    as?: 'button' | 'link';
     href?: string;
+    to?: string;
+    as?: 'button' | 'link';
     target?: string;
     theme?: 'button' | 'button-primary' | 'link' | 'link-primary'
 }
@@ -37,6 +43,7 @@ const Button = ({
     onClick,
     as = 'button',
     href = '',
+    to = '',
     target,
     theme
 }: Props) => {
@@ -46,10 +53,10 @@ const Button = ({
         event.stopPropagation();
         event.preventDefault();
 
-        if (as === 'link' && href) {
+        if (href) {
             window.open(href, target, 'noreferrer,noopener');
-        } else if (href) {
-            navigate(href);
+        } else if (to) {
+            navigate(to);
         }
         if (onClick) {
             onClick();
@@ -57,7 +64,21 @@ const Button = ({
     };
 
     if (as === 'link') {
-        return <a href={''} onClick={onButtonClick}>{children}</a>;
+        const linkStyles = styles.link;
+        if (theme === 'link-primary') {
+            Object.assign(linkStyles, styles.linkPrimary);
+        }
+        return (
+            <a href={''}
+               onClick={onButtonClick}
+               className={'link'}
+               style={{
+                   textTransform: 'uppercase',
+                   ...linkStyles,
+               }}>
+                {children}
+            </a>
+        );
     }
 
     const buttonStyles = styles.button;
