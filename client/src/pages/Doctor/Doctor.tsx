@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useGetDoctor } from '../../hooks/useGetDoctor';
 import Text from '../../components/Text/Text';
 import Flex from '../../components/Flex/Flex';
-import React from 'react';
 import Button from '../../components/Button/Button';
 import { useListDoctorLocations } from '../../hooks/useListDoctorLocations';
 
