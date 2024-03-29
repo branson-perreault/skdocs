@@ -28,7 +28,7 @@ const Flex = ({
             justifyContent,
             flexWrap: 'nowrap',
             gap,
-            flexGrow: 1,
+            flexGrow: 0
         }}
     >
         {items.map((child, i) => (
