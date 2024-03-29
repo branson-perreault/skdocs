@@ -5,8 +5,15 @@ export const COLORS = {
     greyDark: '#242424',
     grey: '#424242',
     greyLight: '#676767',
-    accent: '#615269',
-    accentLight: '#897394',
+    accentLight: '#d6c5e0',
+    accent: '#897394',
+    accentDark: '#5f4b6e',
+    error: '#b03a2e',
+    errorLight: '#b08e8a',
+    success: '#2e7d32',
+    successLight: '#a3be85',
+    warning: '#f9a825',
+    warningLight: '#f9e79f'
 }
 
 export const FONT_COLORS = {

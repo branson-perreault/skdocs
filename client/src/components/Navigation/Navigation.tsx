@@ -3,16 +3,18 @@ import Text from '../Text/Text';
 import Flex from '../Flex/Flex';
 import Button from '../Button/Button';
 import './navigation.css';
+import { COLORS } from '../../styles/colors';
 
 const Navigation = (): ReactElement => {
-    return <div className='navigation'>
+    return <div className='navigation' style={{
+        backgroundColor: COLORS.accentDark
+    }}>
         <div className={'navigation__container'}>
             <div className={'navigation__container--left'}>
                 <Text as='h2' color={'white'}>Doctors Accepting Patients in Saskatchewan</Text>
-                <Flex direction={'row'} gap={8}>
-                    {/* eslint-disable-next-line react/jsx-no-undef */}
+                <Flex direction={'row'} gap={12}>
                     <Text as='h4' color={'white'}><Button theme={'button'} href={'/find'}>Search</Button></Text>
-                    <Text as='h4' color={'white'}><Button theme={'button-primary'} href={'/about'}>About</Button></Text>
+                    <Text as='h4' color={'white'}><Button theme={'button'} href={'/about'}>About</Button></Text>
                 </Flex>
             </div>
             <div className={'navigation__container--right'}>

@@ -27,11 +27,3 @@ h5.text {
   font-weight: 400;
   margin: 0;
 }
-
-.text--bold {
-  font-weight: 600;
-}
-
-.text--italic {
-  font-style: italic;
-}

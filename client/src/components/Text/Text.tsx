@@ -12,6 +12,7 @@ type Props = {
 const Text = ({children, as, color, emphasis}: Props): ReactElement => {
     const textColor = color ? FONT_COLORS[color] : FONT_COLORS.primary;
     const elementProps = {
+        className: 'text',
         style: {
             color: textColor,
             fontWeight: emphasis?.includes('bold') ? '600' : '400',
