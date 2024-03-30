@@ -22,11 +22,11 @@ const Doctor = () => {
     }
 
     if (loading) {
-        return <span>loading...</span>;
+        return <Page><span>loading...</span></Page>;
     }
 
     if (!doctor) {
-        return <span>not found</span>;
+        return <Page><span>not found</span></Page>;
     }
 
     return <Page>
