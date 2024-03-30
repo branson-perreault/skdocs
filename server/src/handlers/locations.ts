@@ -13,7 +13,7 @@ export const getLocation = async (
     });
 };
 
-export const getLocations = async (
+export const listLocations = async (
     request: Request,
     response: Response,
     next: NextFunction
@@ -24,7 +24,7 @@ export const getLocations = async (
     });
 };
 
-export const getDoctorLocation = async (
+export const listDoctorLocations = async (
     request: Request,
     response: Response,
     next: NextFunction

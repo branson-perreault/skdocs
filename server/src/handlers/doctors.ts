@@ -14,7 +14,7 @@ export const getDoctor = async (
     });
 };
 
-export const getDoctors = async (
+export const listDoctors = async (
     request: Request,
     response: Response,
     next: NextFunction
