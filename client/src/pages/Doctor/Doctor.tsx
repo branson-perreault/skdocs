@@ -33,7 +33,7 @@ const Doctor = () => {
         <Text as={'h1'}>Dr. {`${doctor.first_name} ${doctor.last_name}`.trim()}</Text>
         <Text as={'body'} color={'accent'} emphasis={'italic'}>Last Updated: {new Date(doctor.updated).toLocaleString()}</Text>
         <Flex alignItems={'center'}><Text as={'h3'}>Accepting patients?</Text>{doctor.accepting ? 'Yes' : 'No'}</Flex>
-        <Button theme={'link'} as={'link'} href={`https://www.cps.sk.ca/imis/CPSS/Physician_Summary/Physician_Profile.aspx?ID=${doctor.physician_id}`}>Physician Profile</Button>
+        <Button theme={'link-primary'} as={'link'} href={`https://www.cps.sk.ca/imis/CPSS/Physician_Summary/Physician_Profile.aspx?ID=${doctor.physician_id}`}>Physician Profile</Button>
         <Text as={'h2'}>Locations</Text>
         {locations?.map(location => <span>{location.name}</span>)}
     </Page>;
