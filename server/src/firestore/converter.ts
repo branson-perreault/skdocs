@@ -9,8 +9,7 @@ export const converter = <T extends DocumentData>(): FirestoreDataConverter<T, D
         const toReturn = snap.data();
         Object.keys(toReturn).forEach(key=> {
             if (toReturn[key] instanceof Timestamp) {
-                const dateValue = new Date(1970, 0, 1);
-                dateValue.setSeconds(toReturn[key]._seconds);
+                const dateValue = new Date(toReturn[key]._seconds * 1000);
                 toReturn[key] = dateValue;
             }
         })
