@@ -15,6 +15,7 @@ const Navigation = (): ReactElement => {
                 <Text as='h2' color={'white'}>Doctors Accepting Patients in Saskatchewan</Text>
                 <Flex direction={'row'} gap={12}>
                     <Text as='h4' color={'white'}><Button as='link' theme={'link'} to={'/find'}>Search</Button></Text>
+                    <Text as='h4' color={'white'}><Button as='link' theme={'link'} to={'/tips'}>Tips</Button></Text>
                     <Text as='h4' color={'white'}><Button as='link' theme={'link'} to={'/about'}>About</Button></Text>
                 </Flex>
                 </Flex>
