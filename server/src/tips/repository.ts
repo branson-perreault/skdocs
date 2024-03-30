@@ -13,3 +13,8 @@ const listTips = async (): Promise<Tip[]> => {
     const snapshots = await db.tips.get();
     return snapshots.docs.map(doc => doc.data());
 };
+
+export default {
+    getTip,
+    listTips
+};
