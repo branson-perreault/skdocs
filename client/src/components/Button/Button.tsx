@@ -64,7 +64,7 @@ const Button = ({
     };
 
     if (as === 'link') {
-        const linkStyles = styles.link;
+        const linkStyles = {...styles.link};
         if (theme === 'link-primary') {
             Object.assign(linkStyles, styles.linkPrimary);
         }
@@ -81,7 +81,7 @@ const Button = ({
         );
     }
 
-    const buttonStyles = styles.button;
+    const buttonStyles = {...styles.button};
     if (theme === 'button-primary') {
         Object.assign(buttonStyles, styles.buttonPrimary);
     }
