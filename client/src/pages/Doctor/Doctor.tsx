@@ -35,7 +35,7 @@ const Doctor = () => {
         <Flex alignItems={'center'}><Text as={'h3'}>Accepting patients?</Text>{doctor.accepting ? 'Yes' : 'No'}</Flex>
         <Button theme={'link-primary'} as={'link'} href={`https://www.cps.sk.ca/imis/CPSS/Physician_Summary/Physician_Profile.aspx?ID=${doctor.physician_id}`}>Physician Profile</Button>
         <Text as={'h2'}>Locations</Text>
-        {locations?.map(location => <span>{location.name}</span>)}
+        {locations?.map(location => <span key={location.uuid}>{location.name}</span>)}
     </Page>;
 };
 

@@ -34,7 +34,7 @@ const Search = (): ReactElement => {
     return <Page>
         <Flex direction={'column'} gap={24}>
             <Input value={search} as={'search'} placeholder="Search..." onChange={(e) => setSearch(e.currentTarget.value)}/>
-            {results?.map(d => <Button theme={'button-primary'}
+            {results?.map(d => <Button key={d.uuid} theme={'button-primary'}
                 onClick={() => goToDoctor(d.uuid)}>{`${d.first_name} ${d.last_name}`.trim()}</Button>)}
         </Flex>
     </Page>;
