@@ -34,10 +34,11 @@
 
 }
 
-.form-field input:focus + .placeholder {
+.form-field input:focus + .placeholder, .form-field input:not(:placeholder-shown) + .placeholder {
   top: -10px;
   font-size: 10px;
   color: #424242;
 }
+
 
 

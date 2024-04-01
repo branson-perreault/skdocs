@@ -20,16 +20,7 @@ const Tips = () => {
 
         <Form formik={formik}>
             <TextField name={'name'} label={'Name'} />
-            <label className={'textarea'}>
-                <span>Message</span>
-                <input
-                    id='message'
-                    name='message'
-                    type='textarea'
-                    onChange={formik.handleChange}
-                    value={formik.values.message}
-                />
-            </label>
+            <TextField name={'message'} label={'Message'} />
             <Button onClick={formik.submitForm}>Submit</Button>
         </Form>
 

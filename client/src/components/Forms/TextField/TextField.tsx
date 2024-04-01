@@ -11,6 +11,7 @@ const TextField = ({ name, label }: Props) => {
         <label className={'form-field text-field'}>
             <input
                 type='text'
+                placeholder='&nbsp;'
                 id={name}
                 name={name}
                 onChange={handleChange}
